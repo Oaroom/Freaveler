@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+ 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -10,6 +12,14 @@
 <script src="http://malsup.github.com/jquery.cycle2.js"></script>
 
 <style>
+
+
+	body{
+	
+	align:center;
+	
+	}
+
 	#sub{
 	
 		font-size:20px;
@@ -122,8 +132,63 @@
 table{align:center;}
 
 
+#loginbar{
+
+background-color: #FAFAFA;
+border-radius: 10px;
+height:110px;
+width:260px;
+padding-top: 20px;
+margin-top:10px;
+border:1px solid #AAAAAA;
+
+}
+
+#singup{
+
+	font-size:9pt;
+	color:#BBBBBB;
+
+}
+
+input[type="text"],
+input[type="password"]{
 
 
+background-color:white;
+height:30px;
+border-spacing:0px;border-style:none;padding:0px; margin-top:10px;
+margin:0px;
+padding:0px;
+border:1px solid #F1F1F1;
+
+}
+
+
+#recom{
+
+	width:400px;
+	height:400px;
+	border: 1px solid #051b45;
+	border-radius:10px;
+	margin-left:8px;
+}
+
+#recom h4{
+
+	
+	font-family:"돋움";
+	color:white;
+	background-color:#051b45;
+	height:50px;
+	width:390px;
+	font-size:17px;
+	margin-top:0px;
+	padding-top:15px;
+	padding-left:10px;
+	margin-bottom:5px;
+	border-radius:8px 8px 0px 0px;
+}
 </style>
 
 
@@ -132,10 +197,9 @@ table{align:center;}
 
 <body>
 
-<table width="1500px" border>
+<table width="1500px"  >
 	<tr>
-		<td>
-		</td>
+		
 		<td rowspan="2" style="width:800px; height:400px">
 		
 					
@@ -152,17 +216,50 @@ table{align:center;}
 			</div>
 		
 		</td>
-		<td  width="350px">
+		<td rowspan="2">
 		
+		<div id="recom">
 		
-			<table align="center">
+			<h4> 오늘의 추천여행 </h4>
+			
+			
+			<table align="center" width="360px" height="325px">
 				<tr>
 					<td>
+					<jsp:include page="main_item.jsp"></jsp:include>
+					</td>
+					<td>
+					<jsp:include page="main_item.jsp"></jsp:include>
+					</td>
+				</tr>
+				
+				<tr>
+					<td>
+					<jsp:include page="main_item.jsp"></jsp:include>
+					</td>
+					<td>
+					<jsp:include page="main_item.jsp"></jsp:include>
+					</td>
+				</tr>
+			
+			</table>
+			
+			
+		
+		</div>
+		
+		</td>
+		<td  width="260px" height="110px">
+		
+			<div id="loginbar">
+			<table align="center" >
+				<tr>
+					<td >
 					<input type="text" placeholder="아이디">
 					</td>
 					
 					<td rowspan="2">
-						<input type="submit" value="LOGIN" style="height:50px">
+						<input type="submit" value="LOGIN" style="height:70px">
 					</td>
 				</tr>
 				<tr>
@@ -173,14 +270,18 @@ table{align:center;}
 				
 				<tr>
 					<td id="singup">
+					
+					<a href="signUpForm.jsp">
 						회원가입하기
+						</a>
 					</td>
 					<td>
 						
 					</td>
 				</tr>
 			</table>
-		
+		 </div>
+		 
 		</td>
 	</tr>
 	
